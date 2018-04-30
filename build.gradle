@@ -49,3 +49,13 @@ bootWar {
     baseName = 'bugalog'
     version = ''
 }
+
+task deployOnTomcat(){
+    doLast{
+        copy{
+            from "$buildDir/libs"
+            into "D:/Tomcat8.5/webapps"
+            include "*.war"
+        }
+    }
+}

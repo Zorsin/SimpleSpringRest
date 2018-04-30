@@ -21,6 +21,7 @@ public class Person {
 
   private String firstName;
   private String lastName;
+  private String mail;
 
   public String getFirstName() {
     return firstName;
@@ -36,5 +37,21 @@ public class Person {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  public String getMail() {
+    return mail;
+  }
+
+  public void generateMailAddresss(){
+    if(mail == null  || mail.equals("")){
+      mail = firstName + "." + lastName + "@bugalog.de";
+    }
+
+  }
+
+  @Override
+  public String toString() {
+    return id+" Person: "+firstName + " " + lastName;
   }
 }
